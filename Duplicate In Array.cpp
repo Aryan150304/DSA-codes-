@@ -37,4 +37,4 @@ int findDuplicate(vector<int> &arr)
 }  
 
 // in approach 1 we use the concept of bit manipulation . Using XOR operator we find the duplicate element in an array in O(n) time complexity
-// in approach 2 we use an appraoch of sum of natural numbers 
+// in approach 2 we use an appraoch of sum of natural numbers and subtract the sum of arrays and natural numbers sum
