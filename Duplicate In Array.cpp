@@ -2,8 +2,8 @@
 Link of the problem - https://www.codingninjas.com/codestudio/problem-details/duplicate-in-array_893397
 
 
-Solution - /* 
-Approach 1  - 
+Solution - */ 
+// Approach 1  - 
 int findDuplicate(vector<int> &arr) 
 {
     //second approach
@@ -20,7 +20,7 @@ int findDuplicate(vector<int> &arr)
     
 }
 
-Approach 2  - 
+// Approach 2  - 
 int findDuplicate(vector<int> &arr) 
 {
   //array = sum of N natural numbers + one repeated element 
