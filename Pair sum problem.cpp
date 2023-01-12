@@ -2,7 +2,7 @@
 Link of the problem - https://www.codingninjas.com/codestudio/problems/pair-sum_697295
 
 
-Solution - /* 
+Solution - */ 
 
 #include <bits/stdc++.h> 
 vector<vector<int>> pairSum(vector<int> &arr, int s){
