@@ -1,6 +1,6 @@
 /* Code Ninjas problem solution of finding Square Root of a number in o(log n ) complexity
 Link of the problem - https://www.codingninjas.com/codestudio/problems/square-root-integral_893351
-Solution - /* 
+Solution - */ 
 
 #include <bits/stdc++.h>  
 long long int sqrtN(long long int N)
@@ -29,4 +29,4 @@ long long int sqrtN(long long int N)
 }
 
 // To find the square root of a number in o(logn) we use the concept of binary search. The concept used in this question is an essential
-building block for medium and hard problems like book allocation problem
+// building block for medium and hard problems like book allocation problem
