@@ -1,6 +1,6 @@
 /* Code Ninjas problem solution of searching in a sorted rotated array
 Link of the problem - https://www.codingninjas.com/codestudio/problem-details/search-in-rotated-sorted-array_1082554
-Solution - /* 
+Solution - */
 
 #include <bits/stdc++.h> 
 int getPivot(vector<int>& arr, int n){
@@ -46,11 +46,10 @@ int findPosition(vector<int>& arr, int n, int k)
        return  binarySearch(arr,n,0,pivot-1,k);
     }
     // step 2 apply bs 
-    
-    
+        
 }
 
 
 // Before understanding the solution, we shall know how to find the pivot element in this array. 
-After finding the pivot element we decide the part where binary search is to be applied and hence we apply the binary search in the respective part 
-in third step
+// After finding the pivot element we decide the part where binary search is to be applied and hence we apply the binary search in the respective part 
+// in third step
