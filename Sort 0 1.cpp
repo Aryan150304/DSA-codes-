@@ -1,6 +1,6 @@
 // problem statement - The array consist of only 2 values 0 and 1 sort the array in non decreasing order in o(n) complexity.
 
-Solution - /* 
+// Solution - */ 
 
 #include<iostream>
 using namespace std ;
