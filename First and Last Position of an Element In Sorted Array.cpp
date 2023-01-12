@@ -1,6 +1,6 @@
 /* Code Ninjas problem solution of finding first and Last Position of an Element In Sorted Array
 Link of the problem - https://www.codingninjas.com/codestudio/problems/first-and-last-position-of-an-element-in-sorted-array_1082549
-Solution - /* 
+Solution - */
 #include <bits/stdc++.h>
 int firstOccur(vector<int>&arr, int n, int elem)
 {
