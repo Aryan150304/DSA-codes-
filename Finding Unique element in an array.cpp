@@ -2,7 +2,7 @@
 Link of the problem - https://www.codingninjas.com/codestudio/problems/find-unique_625159
 
 
-Solution - /* 
+Solution - */ 
 
 int findUnique(int *arr, int n)
 {
