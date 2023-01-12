@@ -1,6 +1,6 @@
 /* Code Ninjas problem solution of finding Peak Index in a Mountain Array
 Link of the problem - https://leetcode.com/problems/peak-index-in-a-mountain-array/
-Solution - /* 
+Solution - */ 
 
 class Solution {
 public:
