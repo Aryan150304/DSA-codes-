@@ -24,4 +24,4 @@ vector<vector<int>> pairSum(vector<int> &arr, int s){
     return ans;
 }
 
-// here we use the concept of 2 loops and push the value into the vector in the format min, max(sort function is used from stl)
+// here we use the concept of 2 loops and push the value into the vector in the format min, max
