@@ -1,0 +1,39 @@
+
+#include<iostream>
+using namespace std;
+int main(){
+    // creating a 2d array 
+    int n;
+    cin>>n;
+    int **arr = new int*[n];
+    int aryan[n];
+    for(int i=0;i<n;i++ ){
+        int elem;
+        // here comes the catch for jagged array 
+        cout<<"Enter the number of elements in the row "<<i<<endl;
+        cin>>elem;
+        aryan[i]=elem;
+        arr[i] = new int[elem];
+    }
+       for(int i=0;i<n;i++ ){
+           for(int j=0;j<aryan[i];j++){
+               cin>>arr[i][j];
+           }
+    }
+    
+    // printing the 2d array 
+           for(int i=0;i<n;i++ ){
+           for(int j=0;j<aryan[i];j++){
+               cout<<arr[i][j]<<" ";
+           }
+           cout<<endl;
+    }
+    
+    // releasing the memmory of columns
+    for(int i = 0;i<n;i++){
+        delete []arr[i];
+    }
+    delete []arr;
+    
+    return 0;
+}
