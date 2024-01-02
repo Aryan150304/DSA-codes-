@@ -1,0 +1,48 @@
+// leetcode daily problem solution - https://leetcode.com/problems/convert-an-array-into-a-2d-array-with-conditions/description/?envType=daily-question&envId=2024-01-02
+class Solution {
+public:
+    vector<vector<int>> findMatrix(vector<int>& nums) {
+        // first step
+        int n = nums.size();
+        vector<vector<int>> aryan;
+        if(n==1){
+            aryan.push_back(nums);
+            return aryan;
+        }
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<n-1;i++){
+            if(nums[i]==nums[i+1])
+            {
+               break;
+            }
+            else if(i == n-2)
+            {
+                aryan.push_back(nums);
+                return aryan;
+            }
+        }
+        // second step
+        int maxi = nums[n-1];
+        vector<int> arr(maxi+1, 10);
+        for (int i =0;i<nums.size();i++){
+            int nwnum = nums[i];
+            arr[nwnum]++;
+        } 
+        int finals = *max_element(arr.begin(),arr.end());
+        while(finals){
+            vector<int> finalarray;
+            for(int i = 0;i<arr.size();i++){
+                if(arr[i]>0){
+                    finalarray.push_back(i);
+                    arr[i]--;
+                }
+            }
+            if(finalarray[0]>0){
+                aryan.push_back(finalarray);
+            }
+            finals--;
+        }
+        return aryan;
+    }
+};
+
