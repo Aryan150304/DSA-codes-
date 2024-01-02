@@ -46,3 +46,31 @@ public:
     }
 };
 
+
+// another approach is to make a hashmap and store the frequency and iterate on the basis of frequency . Remember to make 2D array based on frequency
+class Solution {
+public:
+    vector<vector<int>> findMatrix(vector<int>& nums) {
+        // new approach
+        int n = nums.size();
+        
+         unordered_map <int, int>mp;
+         int maxi = 0;
+         for(int i= 0;i<n;i++){
+             mp[nums[i]]++;
+             maxi = max(maxi,mp[nums[i]]);
+         }
+         vector<vector<int>> aryan(maxi);
+         // in order to fetch the frequency use iterator.second
+         for(auto a:mp){
+             int num = a.first;
+             int freq= a.second;
+            for(int i =0;i<freq;i++){
+                aryan[i].push_back(num);
+            }
+         }
+         return aryan;
+
+
+    }
+};
