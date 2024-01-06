@@ -49,3 +49,6 @@ string reverseString(string str)
 	return str;
 	
 }
+
+
+// in order to solve using one pointer j can be replaced as str.length()-i-1 and removed from paramters and arguments
