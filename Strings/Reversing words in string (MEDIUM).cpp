@@ -34,3 +34,34 @@ public:
         // appraoch is to push all
     }
 };
+
+
+// approach 2 - 
+
+// isme idea ye hai ki string ko piche se traverse krte hai and space encounter hote hi reverse krdete hai selected string ko and
+// ans string me puch kr dete isse ik hi loop me saari string reverse hoke puch ho jaati hai 
+class Solution {
+public:
+    string reverseWords(string s) {
+        int len=s.size()-1;
+        string temp="";
+        string ans="";
+        for(int i=len;i>=0;i--){
+            if(s[i]==' ' && temp!=""){
+                reverse(temp.begin(),temp.end());
+                ans+=temp+' ';
+                temp="";
+            }
+            else{
+                if(s[i]==' ')   continue;
+                temp+=s[i];
+            }
+        }
+        reverse(temp.begin(),temp.end());
+        ans+=temp;
+        if(ans[ans.size()-1]==' ')
+            //ans=ans.erase(ans.size()-1);
+            ans.pop_back();
+        return ans;
+    }
+};
