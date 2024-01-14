@@ -1,4 +1,4 @@
-
+// gfg link - https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1
 class Solution{
     public:
     bool isSafe(vector<vector<int>>&m , int n, int srcx, int srcy,vector<vector<int>> &visited){
