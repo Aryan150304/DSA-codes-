@@ -29,3 +29,36 @@ public:
         return true;
 }
 };
+
+/* 
+approach 2 - Rather than sorting the array and increasing time complexity, store the frequency in a hashmap and then store the elements 
+of that hashmap in a set. Set stores only unique elements so if the occurences will be same it will not store so if the sixze of set and hashmap is uqual
+thn return true
+*/
+class Solution {
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+    
+        unordered_map<int,int> freq;
+
+        for(auto val: arr)
+        {
+            freq[val]++;
+        }
+
+        unordered_set<int> st;
+
+        for(auto val: freq)
+        {
+            if(st.count(val.second)) return false;
+            st.insert(val.second);
+        }
+
+        return true;
+    }
+
+// 2 hashmap approach  
+//set stores only unique elements 
+// store the frequency of all elements in a hashmap now store the elements of hashmap in set . if the size of set is equal to hashmap size then its true else its false
+
+};
