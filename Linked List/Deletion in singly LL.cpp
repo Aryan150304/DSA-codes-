@@ -87,7 +87,9 @@ void deletes(Node *&head, Node *&tail, int pos)
         prev->next = NULL;
         tail = prev;
         delete temp;
+        return;
     }
+
     prev->next = temp->next;
     delete temp;
 }
@@ -124,6 +126,7 @@ int main()
     // 20 10 30 500
     deletes(head, tail, 4);
     print(head);
+    cout << tail->data << endl;
     // 20 10 30
 
     return 0;
