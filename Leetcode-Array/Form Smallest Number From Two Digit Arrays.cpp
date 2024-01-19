@@ -1,6 +1,43 @@
 // leetcod elink - https://leetcode.com/problems/form-smallest-number-from-two-digit-arrays/description/ 
+// Approach1 - more optimised 
+/* find the sum of first and last element. If sum is larger than target then reduce the sum by moving to end--. if it is smaller than
+the targget then increase sum by start++
+    */
+// TC - O(n)
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int k) {
+        // sum find kr first aur last ka 
+        // agar to vo last element se bda hai to ik element chota krdo
+        // agar sum chota hai to ik element badha do 
+
+        int start =0;
+        vector<int> ans;
+        int end = numbers.size()-1;
+        while(end>start){
+            int sum = numbers[start]+numbers[end];
+            if(sum>k){
+                end--;
+            }
+            else if(sum<k){
+                start++;
+            }
+            else{
+                ans.push_back(start+1);
+                ans.push_back(end+1);
+                break;
+            }
+
+        }
+        return ans;     
+    }
+};
 
 
+/* approach 2 - for every element we find the lower bound of target - i  ands if the idex of lower bound element and i become eual to k 
+then ok other wise i++. Now it may happen that the lower bound become bigger than the total size of array so ignore such cases by using 
+if statement
+*/
 class Solution {
 public:
     int minNumber(vector<int>& nums1, vector<int>& nums2) {
