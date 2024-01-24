@@ -15,14 +15,24 @@ then reverse and return the head of reversed node else return the head of non re
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
     bool getlen(ListNode* head, int k) {
-        ListNode *curr = head;
-        int count =0;
-        while(count<k-1){
+        ListNode* curr = head;
+        int count = 0;
+        while (count < k - 1) {
             curr = curr->next;
-            if(curr==NULL){
+            if (curr == NULL) {
                 return false;
             }
             count++;
@@ -40,8 +50,11 @@ public:
         ListNode* curr = head;
         ListNode* prev = NULL;
         bool length = getlen(head, k);
-        if(length==true){
-             while (curr != NULL && count < k) {
+        if (length != true) {
+            return head;
+        }
+
+        while (curr != NULL && count < k) {
             next = curr->next;
             curr->next = prev;
             prev = curr;
@@ -55,9 +68,5 @@ public:
             head->next = reverseKGroup(curr, k);
         }
         return prev;
-        }
-        return head;
-        
-       
     }
 };
