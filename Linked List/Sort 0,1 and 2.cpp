@@ -41,3 +41,58 @@ Node* sortList(Node *head){
     }
     return head;
 }
+
+/* 
+Another approach if the data replacement is not allowed. In that case make separate linked list for one two and zero and at the end 
+merge them by considering some extreme test cases
+*/
+void insert(Node*&head, int data){
+    Node *newNode = new Node(data);
+    head->next = newNode;
+    head = newNode;
+}
+Node* sortList(Node *head){
+    // Write your code here
+    if((head==NULL||head->next==NULL)){
+        return head;
+    }
+
+    Node *zerohead = new Node(-1);
+    Node *zerotail = zerohead;
+    Node *onehead = new Node(-1);
+    Node *onetail = onehead;
+    Node *twohead = new Node(-1);
+    Node *twotail = twohead;
+
+
+    Node *curr = head;
+    while(curr!=NULL){
+        if(curr->data==0){
+            insert(zerotail,0);
+        }
+        else if(curr->data==1){
+            insert(onetail,1);
+        }
+        else{
+            insert(twotail,2);
+        }
+        curr = curr->next;
+    }
+
+    // now merge the all lists
+    if(onehead->next!=NULL){
+        zerotail->next = onehead->next;
+        onetail->next = twohead->next;
+    }
+    else{
+        zerotail->next = twohead->next;
+    }
+
+   
+    twotail->next = NULL;
+    head = zerohead->next;
+    delete onehead;
+    delete zerohead;
+    delete twohead;
+    return head;
+}
