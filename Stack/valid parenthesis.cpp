@@ -1,6 +1,7 @@
-// main approach is that the when we need to pop stack should have some element if it doesnot have then return false in that case
-// after all transactions stack needs to be empty if it is then return true else return false
-// moreover when popping check if the top and ch matches or not
+/* main approach is that the when we need to pop the stack it should have some element if it doesnot have then return false in that case
+ after all transactions stack needs to be empty if it is then return true else return false
+moreover when popping check if the top and ch matches , if it does not match in any case thenn return false
+*/
 bool matches(char ch, char top){
     if((ch=='('&&top==')')||(ch=='['&&top==']')||(ch=='{'&&top=='}')){
         return true;
