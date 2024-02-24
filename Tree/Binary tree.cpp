@@ -1,5 +1,6 @@
 #include <iostream>
 #include<queue>
+#include<stack>
 using namespace std;
 class node{
     public:
@@ -31,7 +32,7 @@ node * buildTree(node *root){
 }
 // tree is printed using queue where we put each element and then pop that element by putting its left and right nodes
 
-// but to print in tree format we need to insertt NULL;
+// but to print in tree format we need to insert NULL;
 void levelorder(node *root){
     queue<node *> q;
     q.push(root);
@@ -57,14 +58,39 @@ void levelorder(node *root){
     }
 }
 
-// includes creating and level order traversal
+void reverseorder(node *root){
+queue<node *> q;
+stack<node *> stack;
+    q.push(root);
+    while(!q.empty()){
+        node *ans = q.front();
+        q.pop();
+        stack.push(ans);
+             if(ans->left){
+             q.push(ans->left);
+        }
+        if(ans->right){
+            q.push(ans->right);
+        }
+
+    }
+    while(!stack.empty()){
+        node* ans = stack.top();
+        stack.pop();
+        cout<<ans->data<<" ";
+    }
+}
+
 int main()
 {
     node *root = NULL;
     root = buildTree(root);
     // 1 3 5 -1 -1 11 -1 -1 6 4 -1 -1 2 -1 -1 
-    // now printing these nodes 
     // level order traversal 
     levelorder(root);
+    
+    // for reverse level order traversal we gonna use stack 
+    cout<<endl<<"reverse level order traversal"<<endl;
+    reverseorder(root);
     return 0;
 }
