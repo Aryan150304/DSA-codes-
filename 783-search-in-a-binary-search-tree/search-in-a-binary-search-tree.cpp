@@ -1,18 +1,16 @@
 class Solution {
 public:
     TreeNode* searchBST(TreeNode* root, int val) {
-      // as it is a BST 
-    //   so we need to compare the value 
-    if(root==NULL){
-        return  NULL;
-    }
-    if(root->val==val){
-        return root ;
-    }
-    if(root->val>val){
-        TreeNode *lh = searchBST(root->left,val);
-        if(lh )return lh;
-    }
-        return searchBST(root->right,val);
+        /// you just need to search for the value so no need to backtrack
+        // in BST we dont search whole tree we apply binary searhc and move in O(h)
+        while(root!=NULL&&root->val!=val){
+            if(root->val>val){
+                root = root->left;
+            }
+            else{
+                root = root->right;
+            }
+        }
+        return root;
     }
 };
