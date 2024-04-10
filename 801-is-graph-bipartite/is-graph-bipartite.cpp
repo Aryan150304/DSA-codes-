@@ -1,21 +1,13 @@
 class Solution {
 private:
-    bool bfs(vector<vector<int>>& graph, vector<int> &color, int i){
-        color[i] = 0;
-        queue<pair<int,int>> q;
-        q.push({i,0});
-        while(!q.empty()){
-            int node = q.front().first;
-            int cols = q.front().second;
-            q.pop();
-            for(auto it: graph[node]){
-                if(color[it]==-1){
-                    color[it] = !cols;
-                    q.push({it,color[it]});
-                }
-                else{
-                    if(color[it]!=!cols) return false;
-                }
+    bool dfs(vector<vector<int>>& graph, vector<int> &color, int i, int col){
+        color[i] = !col;
+        for(auto it: graph[i]){
+            if(color[it]==-1){
+                if(dfs(graph,color,it,!col)==false) return false;
+            }
+            else{
+                if(color[it]!=col) return false;
             }
         }
         return true;
@@ -31,7 +23,7 @@ public:
       // run the code but rather than maintaining visisted array lets maintain colot array
       for(int i=0;i<V;i++){
         if(color[i]==-1){
-            if(bfs(graph,color,i)==false) return false;
+            if(dfs(graph,color,i,0)==false) return false;
         }
       }
       return true;
